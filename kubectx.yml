@@ -1,0 +1,27 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority: /Users/Soroush/.certs/ca.crt
+    server: https://127.0.0.1:6443
+  name: cluster.local
+contexts:
+- context:
+    cluster: cluster.local
+    namespace: DEV
+    user: soroush@cluster.local
+  name: staging
+- context:
+    cluster: cluster.local
+    namespace: Prod
+    user: soroush@cluster.local
+  name: prod
+current-context: ""
+kind: Config
+preferences: {}
+users:
+- name: soroush@cluster.local
+  user:
+    client-certificate: /Users/Soroush/.certs/client.crt
+    client-key: /Users/Soroush/.certs/client.key
+	
+	
