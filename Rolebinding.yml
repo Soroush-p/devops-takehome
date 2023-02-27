@@ -1,0 +1,24 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: DEV
+  name: dev-team-role
+rules:
+- apiGroups: [""] # "" indicates the core API group
+  resources: ["*"] # ["pods", "service", "daemonset", "deployment", "replicaset", "statefulset", "job", "cronjobs", "configmaps"]
+  verbs: ["get", "list", "create", "update", "patch", "delete", "watch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: dev-team-binding
+  namespace: DEV
+subjects:
+- kind: User
+  name: Soroush@cluster.local
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: dev-team-role
+  apiGroup: rbac.authorization.k8s.io
+---
