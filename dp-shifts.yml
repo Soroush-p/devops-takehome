@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dp-shifts
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-shifts
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: app-shifts
+    spec:
+      containers:
+      - name: app-shifts
+        image: docker.io/httpd:latest
+        ports:
+        - containerPort: 8080
+	resources:
+	  requests:
+	    cpu: 25m
+	  limits:
+	    cpu: 25m
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-shifts
+spec:
+  type: LoadBalancer
+  selector:
+    app: app-shifts
+  ports:
+  - port: 8080
+    targetPort: 8080
