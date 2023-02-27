@@ -14,7 +14,7 @@ Resources Stanza under the pod spec in the deplyment added so Kubelet can read t
 
 RBAC:
 
-Using role based access control to authorize DEV team. Creating role and rolebinding for DEV team to access the resources only in DEV namespace. That ensure Dev team can't access resources other than the ones insdide DEV namespace.
+Using role based access control to authorize DEV team. Creating role and rolebinding for DEV team to access the resources only in DEV namespace. That ensure Dev team can't access resources other than the ones inside DEV namespace.
 
 
 Managing multiple clusters:
@@ -24,7 +24,7 @@ defining cluster, users and contexts in a config file to easily switch between e
 
 Autoscaling based on Network latency:
 
-Nginx ingress controller provides couples of metrics including number of active connections, once number of active connetcions increase that causes the ingress controller pod can't handle the number of connection and need more resources to able to address more connections. Premethus can be used to collect the metrics from Nginx and KEDA bridges those metric and feed them to Horitontal Pod Autoscaler.
+Nginx ingress controller provides couples of metrics including number of active connections, once number of active connetcions increase that causes the ingress controller pod can't handle the number of connection and need more resources to able to address more connections. Premethus can be used to collect the metrics from Nginx controller and KEDA bridges those metric and feed them to Horitontal Pod Autoscaler.
 
 
 
