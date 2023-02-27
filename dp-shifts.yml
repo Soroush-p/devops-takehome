@@ -4,7 +4,7 @@ metadata:
   name: dp-shifts
 spec:
   replicas: 1
-  selector:
+  selector:revisionHistoryLimit: 5
     matchLabels:
       app: app-shifts
   strategy:
