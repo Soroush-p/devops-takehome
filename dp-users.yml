@@ -4,6 +4,7 @@ metadata:
   name: dp-users
 spec:
   replicas: 1
+  selector:revisionHistoryLimit: 5
   selector:
     matchLabels:
       app: app-users
