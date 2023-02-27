@@ -1,9 +1,10 @@
 # 
 
 
+
 Deployment and RollingUpdate:
 
-Using the deployment instead of replicaSet gives the ability to autoscale based on the CPU and other metrics. Each app have a seperate deployment to able to scale indepentently, one for Shifts and one for Users. Strategy stanza added as RollingUpdate to allow the rolling update and rollback.
+Using the deployment instead of replicaSet gives the ability to rollingUpdate , rollback and autoscale based on the CPU and other metrics. Each app have a seperate deployment to able to scale indepentently, one for Shifts and one for Users. "Strategy" stanza added as RollingUpdate to allow the rolling update and rollback.
 
 
 Autoscaling:
